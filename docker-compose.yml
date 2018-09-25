@@ -1,0 +1,26 @@
+version: "3"
+services:
+  app:
+    container_name: graphql-app
+    restart: always
+    build: .
+    environment:
+      NODE_ENV: development
+    volumes:
+    - ./:/usr/src/app
+    ports:
+    - 3000:3000
+    command: sh -c "tail -f /dev/null"
+  mongodb:
+    image: mongo:latest
+    restart: always
+    container_name: graphql-mongodb
+#    environment:
+#      MONGO_INITDB_ROOT_USERNAME: root
+#      MONGO_INITDB_ROOT_PASSWORD: example
+#    volumes:
+#    - ./data/db:/data/db
+    ports:
+    - 27017:27017
+#    command: sh -c "tail -f /dev/null"
+
