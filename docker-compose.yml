@@ -1,7 +1,7 @@
 version: "3"
 services:
   app:
-    container_name: graphql-app
+    container_name: graphql-app-koa
     restart: always
     build: .
     environment:
@@ -10,11 +10,11 @@ services:
     - ./:/usr/src/app
     ports:
     - 3000:3000
-    command: sh -c "tail -f /dev/null"
+    command: sh -c "yarn install && tail -f /dev/null"
   mongodb:
     image: mongo:latest
     restart: always
-    container_name: graphql-mongodb
+    container_name: graphql-mongodb-koa
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example

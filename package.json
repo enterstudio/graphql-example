@@ -6,6 +6,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-typescript": "^7.0.0",
+    "@types/graphql": "^14.0.1",
     "@types/jest": "^23.3.2",
     "@types/koa": "^2.0.46",
     "@types/koa-router": "^7.0.32",
@@ -26,7 +27,7 @@
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
     "bundle": "webpack",
     "test": "jest",
-    "watch-server": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/server.ts"
+    "server:watch": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/server.ts"
   },
   "jest": {
     "transform": {
@@ -50,7 +51,10 @@
   },
   "license": "MIT",
   "dependencies": {
+    "graphql": "^14.0.2",
     "koa": "^2.5.3",
-    "koa-router": "^7.4.0"
+    "koa-graphql": "^0.7.5",
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.2.18"
   }
 }

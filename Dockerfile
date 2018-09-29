@@ -10,4 +10,6 @@ RUN yarn install
 
 COPY . .
 
+RUN ls -al
+
 #CMD [ "npm", "bundle" ]

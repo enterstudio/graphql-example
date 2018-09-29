@@ -1,5 +1,8 @@
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
+import schema from './schema';
+
+const graphqlHTTP = require('koa-graphql');
 
 const app = new Koa();
 
@@ -10,9 +13,10 @@ app.use(async (ctx: Koa.Context, next: any) => {
 
 const router = new Router();
 
-router.get('/*', async (ctx: Koa.Context) => {
-  ctx.body = 'Hello World';
-});
+router.all('/graphql', graphqlHTTP({
+  schema,
+  graphiql: true
+}))
 
 app.use(router.routes());
 
