@@ -2,14 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const Koa = require("koa");
 const Router = require("koa-router");
-const schema_1 = require("./schema");
+const schema_1 = require("./graphql/schema");
 const graphqlHTTP = require('koa-graphql');
 const app = new Koa();
+const router = new Router();
 app.use(async (ctx, next) => {
     console.log('Url:', ctx.url);
     await next();
 });
-const router = new Router();
 router.all('/graphql', graphqlHTTP({
     schema: schema_1.default,
     graphiql: true
