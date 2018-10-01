@@ -1,4 +1,4 @@
-import { GraphQLObjectType, GraphQLString, GraphQLInt } from "graphql";
+import { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLID } from "graphql";
 import CategoryType from "./category-type";
 
 export const ExpenseType = new GraphQLObjectType({
@@ -7,7 +7,7 @@ export const ExpenseType = new GraphQLObjectType({
 
   fields: () => ({
     _id: {
-      type: GraphQLString,
+      type: GraphQLID,
     },
     title: {
       type: GraphQLString,

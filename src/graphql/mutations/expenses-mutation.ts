@@ -20,7 +20,6 @@ const ExpensesMutation = {
       }
     },
     resolve: async (root, params) => {
-      console.log(params)
       const expenseModel: IExpenseSchema = new Expense(params)
       return await expenseModel.save()
     }
