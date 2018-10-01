@@ -1,9 +1,5 @@
-import { Schema, Document, Model, model } from 'mongoose'
-
-export interface ICategorySchema extends Document {
-  name: string,
-  color: string
-}
+import { Schema, Model, model } from 'mongoose'
+import { ICategorySchema } from '../interfaces';
 
 const categorySchema: Schema = new Schema({
   name: { type: String, required: true, max: 256 },

@@ -1,6 +1,7 @@
 import { GraphQLNonNull, GraphQLString, GraphQLInt } from "graphql";
-import { Expense, IExpenseSchema } from '../models/expense-model';
+import { Expense } from '../models/expense-model';
 import ExpenseType from "../types/expense-type";
+import { IExpenseSchema } from "../interfaces";
 
 const ExpensesMutation = {
   addExpense: {

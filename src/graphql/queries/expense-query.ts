@@ -1,5 +1,5 @@
 import { ExpenseType } from "../types/expense-type";
-import { Expense, IExpenseSchema } from "../models/expense-model";
+import { Expense } from "../models/expense-model";
 import { GraphQLList } from "graphql";
 
 const queries = {

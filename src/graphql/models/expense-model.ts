@@ -1,11 +1,5 @@
-import { Schema, Document, Model, model } from 'mongoose'
-import { ICategorySchema } from './category-model';
-
-export interface IExpenseSchema extends Document {
-  title: string,
-  value: Int32Array,
-  category?: Array<ICategorySchema>
-}
+import { Schema, Model, model } from 'mongoose'
+import { IExpenseSchema } from '../interfaces';
 
 const expenseSchema: Schema = new Schema({
   title: { type: String, required: true, max: 256 },
