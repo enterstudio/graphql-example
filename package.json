@@ -13,6 +13,7 @@
     "@types/mongodb": "^3.1.9",
     "@types/mongoose": "^5.2.17",
     "babel-loader": "^8.0.2",
+    "husky": "^1.1.0",
     "jest": "^23.6.0",
     "nodemon": "^1.18.4",
     "prettier": "^1.14.3",
@@ -59,7 +60,6 @@
   "license": "MIT",
   "dependencies": {
     "graphql": "^14.0.2",
-    "husky": "^1.1.0",
     "koa": "^2.5.3",
     "koa-graphql": "^0.7.5",
     "koa-router": "^7.4.0",
