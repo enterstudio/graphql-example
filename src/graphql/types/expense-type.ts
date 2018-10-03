@@ -1,13 +1,14 @@
-import { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLID } from "graphql";
+import { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLList} from "graphql";
 import CategoryType from "./category-type";
+import { Types } from "mongoose";
 
-export const ExpenseType = new GraphQLObjectType({
+export const ExpenseType: GraphQLObjectType = new GraphQLObjectType({
   name: 'Expense',
   description: 'Typing expense from database',
 
   fields: () => ({
     _id: {
-      type: GraphQLID,
+      type: GraphQLString,
     },
     title: {
       type: GraphQLString,
@@ -16,9 +17,9 @@ export const ExpenseType = new GraphQLObjectType({
       type: GraphQLInt,
     },
     category: {
-      type: CategoryType,
+      type: new GraphQLList(GraphQLString),
     }
   })
-})
+});
 
 export default ExpenseType

@@ -12,7 +12,7 @@ app.use(async (ctx: Koa.Context, next: any) => {
   await next();
 });
 
-mongoose.connect('mongodb://192.168.15.153:27017', {
+mongoose.connect('mongodb://192.168.15.54:27017', {
   user: 'root',
   pass: 'example',
   useNewUrlParser: true

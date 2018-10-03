@@ -1,6 +1,6 @@
 import { GraphQLObjectType, GraphQLString } from "graphql";
 
-export const CategoryType = new GraphQLObjectType({
+export const CategoryType: GraphQLObjectType = new GraphQLObjectType({
   name: 'Category',
   description: 'Category from expenses',
 

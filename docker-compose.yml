@@ -2,7 +2,6 @@ version: "3"
 services:
   app:
     container_name: graphql-app-koa
-    restart: always
     build: .
     environment:
       NODE_ENV: development
@@ -13,7 +12,7 @@ services:
     command: sh -c "yarn install && tail -f /dev/null"
   mongodb:
     image: mongo:latest
-    restart: always
+    # restart: always
     container_name: graphql-mongodb-koa
     environment:
       MONGO_INITDB_ROOT_USERNAME: root

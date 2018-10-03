@@ -1,7 +1,8 @@
-import { GraphQLNonNull, GraphQLString, GraphQLInt } from "graphql";
+import { GraphQLNonNull, GraphQLString, GraphQLInt, GraphQLList } from "graphql";
 import { Expense } from '../models/expense-model';
 import ExpenseType from "../types/expense-type";
 import { IExpenseSchema } from "../interfaces";
+import CategoryType from "../types/category-type";
 
 const ExpensesMutation = {
   addExpense: {
@@ -17,7 +18,7 @@ const ExpensesMutation = {
       },
       category: {
         name: 'category',
-        type: GraphQLString
+        type: new GraphQLList(GraphQLString)
       }
     },
     resolve: async (root, params) => {
