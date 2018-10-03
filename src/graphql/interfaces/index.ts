@@ -1,12 +1,12 @@
-import { Document } from "mongoose";
+import { Document } from 'mongoose'
 
 export interface IExpenseSchema extends Document {
-  title: string,
-  value: Int32Array,
-  category?: Array<String>
+  title: string
+  value: Int32Array
+  category?: string[]
 }
 
 export interface ICategorySchema extends Document {
-  name: string,
+  name: string
   color: string
 }

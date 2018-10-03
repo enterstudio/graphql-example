@@ -1,13 +1,13 @@
-import ExpensesMutation from './expenses-mutation';
-import CategoriesMutation from './category-mutation';
-import {GraphQLObjectType} from 'graphql';
+import ExpensesMutation from './expenses-mutation'
+import CategoriesMutation from './category-mutation'
+import { GraphQLObjectType } from 'graphql'
 
 const MutationType = new GraphQLObjectType({
-	name: 'Mutation',
-	fields: () => ({
+  name: 'Mutation',
+  fields: () => ({
     ...ExpensesMutation,
-    ...CategoriesMutation
-	})
-});
+    ...CategoriesMutation,
+  }),
+})
 
-export default MutationType;
+export default MutationType

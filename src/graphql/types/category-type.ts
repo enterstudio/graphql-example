@@ -1,4 +1,4 @@
-import { GraphQLObjectType, GraphQLString } from "graphql";
+import { GraphQLObjectType, GraphQLString } from 'graphql'
 
 export const CategoryType: GraphQLObjectType = new GraphQLObjectType({
   name: 'Category',
@@ -6,15 +6,15 @@ export const CategoryType: GraphQLObjectType = new GraphQLObjectType({
 
   fields: () => ({
     _id: {
-      type: GraphQLString
+      type: GraphQLString,
     },
     name: {
-      type: GraphQLString
+      type: GraphQLString,
     },
     color: {
-      type: GraphQLString
-    }
-  })
+      type: GraphQLString,
+    },
+  }),
 })
 
 export default CategoryType
