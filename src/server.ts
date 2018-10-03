@@ -1,32 +1,35 @@
-import * as Koa from 'koa';
-import * as Router from 'koa-router';
-import schema from './graphql/schema';
-import mongoose = require('mongoose');
+import * as Koa from 'koa'
+import * as Router from 'koa-router'
+import schema from './graphql/schema'
+import mongoose = require('mongoose')
+import graphqlHTTP = require('koa-graphql')
 
-const graphqlHTTP = require('koa-graphql');
-const app = new Koa();
-const router = new Router();
+const app = new Koa()
+const router = new Router()
 
 app.use(async (ctx: Koa.Context, next: any) => {
-  console.log('Url:', ctx.url);
-  await next();
-});
-
-mongoose.connect('mongodb://192.168.15.54:27017', {
-  user: 'root',
-  pass: 'example',
-  useNewUrlParser: true
+  await next()
 })
 
-mongoose.Promise = global.Promise;
+mongoose.connect(
+  'mongodb://192.168.15.54:27017',
+  {
+    user: 'root',
+    pass: 'example',
+    useNewUrlParser: true,
+  }
+)
 
-router.all('/graphql', graphqlHTTP({
-  schema,
-  graphiql: true
-}))
+mongoose.Promise = global.Promise
 
-app.use(router.routes());
+router.all(
+  '/graphql',
+  graphqlHTTP({
+    schema,
+    graphiql: true,
+  })
+)
 
-app.listen(3000);
+app.use(router.routes())
 
-console.log('Server running on port 3000');
+app.listen(3000)
