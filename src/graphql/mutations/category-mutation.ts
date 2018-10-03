@@ -16,9 +16,9 @@ const CategoriesMutation = {
         type: new GraphQLNonNull(GraphQLString),
       },
     },
-    resolve: async (root, params) => {
+    resolve: (root, params) => {
       const categoryModel: ICategorySchema = new Category(params)
-      return await categoryModel.save()
+      return categoryModel.save()
     },
   },
 }
