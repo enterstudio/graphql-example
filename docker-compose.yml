@@ -1,25 +1,31 @@
-version: "3"
+version: '3'
 services:
   app:
     container_name: graphql-app-koa
     build: .
-    environment:
-      NODE_ENV: development
     volumes:
-    - ./:/usr/src/app
+      - ./:/usr/src/app
     ports:
-    - 3000:3000
+      - 3000:3000
     command: sh -c "yarn install && tail -f /dev/null"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - MONGO_INITDB_ROOT_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD
+      - MONGO_PATH
+
   mongodb:
     image: mongo:latest
     # restart: always
     container_name: graphql-mongodb-koa
+    env_file:
+      - .env
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
-#    volumes:
-#    - ./data/db:/data/db
+      - MONGO_INITDB_ROOT_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD
+    #    volumes:
+    #    - ./data/db:/data/db
     ports:
-    - 27017:27017
-#    command: sh -c "tail -f /dev/null"
-
+      - 27017:27017
