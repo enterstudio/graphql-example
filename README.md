@@ -44,7 +44,7 @@ yarn lint
 ```
 
 # TODO
-- [x] Add TSlint
-- [x] Add Environment variables
+- [x] ~~Add TSlint~~
+- [x] ~~Add Environment variables~~
 - [ ] Unit tests
-- [x] Fix categories query and mutation
+- [x] ~~Fix categories query and mutation~~
