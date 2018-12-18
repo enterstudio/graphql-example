@@ -48,3 +48,4 @@ yarn lint
 - [x] ~~Add Environment variables~~
 - [ ] Unit tests
 - [x] ~~Fix categories query and mutation~~
+- [ ] Add [Dataloader](https://www.youtube.com/watch?v=OQTnXNCDywA) 
