@@ -46,6 +46,6 @@ yarn lint
 # TODO
 - [x] ~~Add TSlint~~
 - [x] ~~Add Environment variables~~
-- [ ] Unit tests
 - [x] ~~Fix categories query and mutation~~
+- [ ] Unit tests
 - [ ] Add [Dataloader](https://www.youtube.com/watch?v=OQTnXNCDywA) 
